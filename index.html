@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Hafchuuu! ❤️</title>
+    <!-- Social Meta Tags -->
+    <meta property="og:title" content="Happy 20th Birthday Hafsa! 🎉">
+    <meta property="og:description" content="A special birthday countdown and surprise for the most amazing girl.">
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <div class="galaxy-bg"></div>
+
+    <!-- Background Floating Elements -->
+    <div class="floating-icons">
+        <span style="top: 15%; left: 15%; animation-delay: 0s; font-size: 2.5rem;">⚡</span>
+        <span style="top: 75%; left: 85%; animation-delay: 1.5s; font-size: 2.5rem;">🌺</span>
+        <span style="top: 35%; left: 8%; animation-delay: 3s; font-size: 1.5rem;">✨</span>
+        <span style="top: 85%; left: 25%; animation-delay: 2s; font-size: 2rem;">💖</span>
+        <span style="top: 25%; left: 80%; animation-delay: 1s; font-size: 2rem;">💕</span>
+        <span style="top: 55%; left: 90%; animation-delay: 4s; font-size: 1.8rem;">🥺</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="mainContainer">
+
+        <!-- Pre-Birthday State -->
+        <div id="countdownState">
+            <h1 class="glow-text">Waiting for Midnight...</h1>
+            <p class="subtitle">For the most special girl: <b style="color: #fbcfe8;">Hafsa Khan</b></p>
+
+            <div class="countdown-wrapper">
+                <div class="time-box diff-box">
+                    <span id="hours">00</span>
+                    <label>Hours</label>
+                </div>
+                <div class="time-box diff-box">
+                    <span id="minutes">00</span>
+                    <label>Minutes</label>
+                </div>
+                <div class="time-box diff-box">
+                    <span id="seconds">00</span>
+                    <label>Seconds</label>
+                </div>
+            </div>
+
+            <div class="story-card glass">
+                <p>Since we met in our university class in <strong>2024</strong> (studying together is the best!)...</p>
+                <div class="height-diff-graphic">
+                    <div class="tall-guy">👨🏻<span>Me 🥺</span></div>
+                    <div class="heart-pulse-icon">❤️</div>
+                    <div class="short-girl">👩🏻<span>Hafchuu 🥰</span></div>
+                </div>
+                <p>Every hangout with you is magical, and I absolutely adore our cute height difference.</p>
+                <div class="nicknames">
+                    <span class="badge blue">Hafchuu 🥺</span>
+                    <span class="badge yellow">My Pikachuuu ⚡</span>
+                    <span class="badge pink">Chukuza 💕</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Happy Birthday State -->
+        <div id="birthdayState" class="hidden">
+            <div class="bday-header">
+                <h1 class="title-cursive">Happy 20th Birthday!</h1>
+                <h2 class="name-highlight glow-text">Hafsa Khan</h2>
+            </div>
+
+            <div class="bday-card glass text-center">
+                <div class="decor-image">🥳🎂🎉</div>
+                <h2 class="letter-opener">My Dearest Hafchuuu,</h2>
+                <p>
+                    Happy 20th Birthday! You are officially 20! 🥺
+                    From the moment we met, you've made my life amazing.
+                    I couldn't have asked for a better partner. Whether I'm calling you Pikachuuu, Chukuza, or just
+                    Hafchuu—you mean the absolutely world to me.
+                </p>
+                <p>
+                    I promise to always adore our cute height difference and make every single hangout even more special
+                    than the last. You are my absolute favorite person.
+                </p>
+                <div class="signature">
+                    With all my love, <br>
+                    <strong>Your Tall Guy</strong> ❤️
+                </div>
+
+                <button id="surpriseBtn" class="btn-primary">Click for Magic ✨</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

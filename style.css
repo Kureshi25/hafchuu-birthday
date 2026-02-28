@@ -1,0 +1,342 @@
+:root {
+    --bg-dark: #0f172a;
+    --primary-blue: #3b82f6; /* Stitch Vibe */
+    --primary-blue-dark: #1e3a8a;
+    --accent-yellow: #facc15; /* Pikachu Vibe */
+    --romantic-pink: #ec4899;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-main);
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Starry background pure CSS */
+.galaxy-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #090a0f 0%, #171635 100%);
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: twinkle linear infinite;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.2; transform: scale(0.8); }
+}
+
+.container {
+    width: 95%;
+    max-width: 800px;
+    z-index: 10;
+    padding: 2rem 1rem;
+    animation: fadeIn 1.5s ease;
+}
+
+h1.glow-text {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 25px rgba(236, 72, 153, 0.4);
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 3rem;
+}
+
+/* Glassmorphism Card */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease;
+}
+
+.glass:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Countdown */
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 20px;
+    min-width: 110px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.02), 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.time-box span {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-yellow) 0%, #ff9a9e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    text-shadow: 0 5px 15px rgba(250, 204, 21, 0.1);
+}
+
+.time-box label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 0.8rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* Height Difference Graphic */
+.height-diff-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    margin: 2.5rem 0;
+    height: 140px;
+    position: relative;
+}
+.tall-guy {
+    font-size: 75px;
+    line-height: 1;
+    display: flex; flex-direction: column; align-items: center;
+    transform-origin: bottom;
+    animation: gentleBob 3s infinite ease-in-out;
+}
+.short-girl {
+    font-size: 55px;
+    line-height: 1;
+    display: flex; flex-direction: column; align-items: center;
+    transform-origin: bottom;
+    animation: gentleBob 3.5s infinite ease-in-out reverse;
+}
+.tall-guy span, .short-girl span {
+    font-size: 15px; color: #cbd5e1; margin-top: 8px; font-weight: 600;
+    background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 8px;
+}
+.heart-pulse-icon {
+    font-size: 35px;
+    position: relative;
+    top: -40px;
+    animation: pulseHeart 1.5s infinite;
+    filter: drop-shadow(0 0 10px rgba(236,72,153,0.8));
+}
+
+@keyframes pulseHeart {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.3); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.2); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes gentleBob {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.floating-icons span {
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+}
+
+.story-card {
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+.nicknames {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 0.6rem 1.2rem;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.badge:hover { transform: scale(1.05); }
+
+.badge.blue { background: rgba(59, 130, 246, 0.15); border: 1px solid var(--primary-blue); color: #93c5fd; }
+.badge.yellow { background: rgba(250, 204, 21, 0.15); border: 1px solid var(--accent-yellow); color: #fef08a; text-shadow: 0 0 5px rgba(250,204,21,0.5); }
+.badge.pink { background: rgba(236, 72, 153, 0.15); border: 1px solid var(--romantic-pink); color: #fbcfe8; }
+
+.hidden { display: none !important; }
+
+/* Birthday View */
+.bday-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: dropDown 1s ease 0.2s both;
+}
+
+.title-cursive {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    color: var(--accent-yellow);
+    margin-bottom: -15px;
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+}
+
+.name-highlight {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    background: linear-gradient(120deg, var(--romantic-pink), #a855f7, var(--primary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.decor-image {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 4s infinite;
+}
+
+.bday-card {
+    animation: zoomIn 0.8s ease 0.5s both;
+}
+
+.letter-opener {
+    margin-bottom: 1.5rem; 
+    color: var(--accent-yellow);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+}
+
+.bday-card p {
+    margin-bottom: 1.2rem; 
+    font-size: 1.25rem; 
+    line-height: 1.8; 
+    color: #e2e8f0; 
+}
+
+.text-center { text-align: center; }
+
+.signature {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    color: #fbcfe8;
+    font-family: 'Dancing Script', cursive;
+}
+.signature strong {
+    font-size: 2rem;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue), var(--romantic-pink));
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 99px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    transition: all 0.3s;
+    font-family: inherit;
+    box-shadow: 0 5px 20px rgba(236,72,153,0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(236,72,153,0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes dropDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    .time-box {
+        min-width: 80px;
+        padding: 1rem;
+    }
+    .time-box span { font-size: 2.5rem; }
+    .glass { padding: 1.5rem; }
+}
